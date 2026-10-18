@@ -149,7 +149,7 @@ export const LoginTrackerMainPage: React.FC = () => {
             </div>
             <div>
               <Title level={3} style={{ margin: 0, color: '#1e293b' }}>
-                Login Tracker
+                Vezo Labs : Login Tracker
               </Title>
               <Text type="secondary" style={{ fontSize: 13 }}>
                 Real-time authentication monitoring, security audit trails, and login analytics for Pimcore Studio
@@ -167,6 +167,18 @@ export const LoginTrackerMainPage: React.FC = () => {
           destroyInactiveTabPane={false}
           style={{ background: 'transparent' }}
         />
+
+        {/* Copyright Footer */}
+        <div style={{ marginTop: 32, padding: '16px 0', borderTop: '1px solid #e2e8f0', textAlign: 'center', color: '#64748b', fontSize: 13 }}>
+          <span>© {new Date().getFullYear()} <a href="https://vezolabs.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#722ed1', fontWeight: 600 }}>VezoLabs</a>. All rights reserved. | </span>
+          <a href="https://vezolabs.com/plugins/pimcore-login-tracker" target="_blank" rel="noopener noreferrer" style={{ color: '#475569', textDecoration: 'underline' }}>
+            Plugin Details & Demo
+          </a>
+          <span> · </span>
+          <a href="https://vezolabs.com/contact" target="_blank" rel="noopener noreferrer" style={{ color: '#475569', textDecoration: 'underline' }}>
+            Contact & Support
+          </a>
+        </div>
       </div>
     </ConfigProvider>
   );

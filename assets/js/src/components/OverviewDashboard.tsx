@@ -215,11 +215,11 @@ export const OverviewDashboard: React.FC<OverviewDashboardProps> = ({
                 {metrics?.most_recent ? (
                   <div>
                     <Space direction="vertical" size={2}>
-                      <Space size={4}>
+                      <Space size={4} wrap={false}>
                         <Tag color={metrics.most_recent.status === 'success' ? 'success' : 'error'}>
                           {metrics.most_recent.status === 'success' ? 'Success' : 'Failed'}
                         </Tag>
-                        <Text strong style={{ fontSize: 13 }}>{metrics.most_recent.username}</Text>
+                        <Text strong style={{ fontSize: 13, whiteSpace: 'nowrap' }}>{metrics.most_recent.username}</Text>
                       </Space>
                       <Text type="secondary" style={{ fontSize: 11 }}>
                         {metrics.most_recent.login_time}

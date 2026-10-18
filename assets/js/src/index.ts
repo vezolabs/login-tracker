@@ -38,7 +38,7 @@ function doRegister(container: any) {
       });
     }
 
-    // 2. Register Navigation Entry: System -> Login Tracker
+    // 2. Register Navigation Entries
     const mainNavRegistry = resolveService(container, [
       'MainNavRegistry',
       'mainNavRegistry',
@@ -48,8 +48,8 @@ function doRegister(container: any) {
     if (mainNavRegistry && typeof mainNavRegistry.registerMainNavItem === 'function') {
       // Primary entry under System
       mainNavRegistry.registerMainNavItem({
-        path: 'System/Login Tracker',
-        label: 'Login Tracker',
+        path: 'System/Vezo Labs : Login Tracker',
+        label: 'Vezo Labs : Login Tracker',
         order: 1040,
         icon: 'security',
         permission: 'plugin_login_tracker_view',
@@ -58,8 +58,8 @@ function doRegister(container: any) {
           id: 'login-tracker',
           component: 'login-tracker',
           config: {
-            title: 'Login Tracker',
-            translationKey: 'Login Tracker',
+            title: 'Vezo Labs : Login Tracker',
+            label: 'Vezo Labs : Login Tracker',
             icon: {
               type: 'name',
               value: 'security',
@@ -70,8 +70,8 @@ function doRegister(container: any) {
 
       // Entry under Settings
       mainNavRegistry.registerMainNavItem({
-        path: 'Settings/Login Tracker',
-        label: 'Login Tracker',
+        path: 'Settings/Vezo Labs : Login Tracker',
+        label: 'Vezo Labs : Login Tracker',
         order: 1040,
         icon: 'security',
         permission: 'plugin_login_tracker_view',
@@ -80,8 +80,8 @@ function doRegister(container: any) {
           id: 'login-tracker',
           component: 'login-tracker',
           config: {
-            title: 'Login Tracker',
-            translationKey: 'Login Tracker',
+            title: 'Vezo Labs : Login Tracker',
+            label: 'Vezo Labs : Login Tracker',
             icon: {
               type: 'name',
               value: 'security',

@@ -2,6 +2,7 @@
 /composer.lock
 /.phpunit.cache/
 node_modules/
+/assets/node_modules
 /assets/node_modules/
 /assets/dist/
 .DS_Store
