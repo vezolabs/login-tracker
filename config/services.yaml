@@ -1,0 +1,27 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Pimcore\Bundle\LoginTrackerBundle\:
+        resource: '../src/*'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/PimcoreLoginTrackerBundle.php'
+
+    Pimcore\Bundle\LoginTrackerBundle\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+
+    Pimcore\Bundle\LoginTrackerBundle\Installer\LoginTrackerInstaller:
+        public: true
+
+    Pimcore\Bundle\LoginTrackerBundle\Webpack\WebpackEntryPointProvider:
+        tags:
+            - { name: pimcore_studio_ui.webpack_entry_point_provider }
+
+    Pimcore\Bundle\LoginTrackerBundle\Maintenance\CleanupMaintenanceTask:
+        tags:
+            - { name: pimcore.maintenance.task, type: login_tracker_cleanup }

@@ -1,0 +1,39 @@
+{
+  "name": "vezolabs/pimcore-login-tracker-bundle",
+  "type": "pimcore-bundle",
+  "description": "Production-Ready Login Tracker Plugin for Pimcore 12 Studio with comprehensive activity monitoring, security insights, and export capabilities",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "VezoLabs",
+      "homepage": "https://github.com/vezolabs"
+    }
+  ],
+  "require": {
+    "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
+    "pimcore/pimcore": "^2025.0 || ^2026.0 || *",
+    "pimcore/studio-backend-bundle": "*",
+    "pimcore/studio-ui-bundle": "*",
+    "symfony/security-bundle": "^6.4 || ^7.0 || ^8.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.0 || ^11.0 || ^12.0 || ^13.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pimcore\\Bundle\\LoginTrackerBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Pimcore\\Bundle\\LoginTrackerBundle\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "pimcore": {
+      "bundles": [
+        "Pimcore\\Bundle\\LoginTrackerBundle\\PimcoreLoginTrackerBundle"
+      ]
+    }
+  }
+}

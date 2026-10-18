@@ -1,0 +1,10 @@
+{
+  "entrypoints": {
+    "exposeRemote": {
+      "js": [
+        "/bundles/pimcorelogintracker/build/pimcore-login-tracker/exposeRemote.js"
+      ],
+      "css": []
+    }
+  }
+}

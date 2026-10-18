@@ -1,0 +1,118 @@
+{
+  "id": "pimcore_login_tracker_bundle",
+  "name": "pimcore_login_tracker_bundle",
+  "metaData": {
+    "name": "pimcore_login_tracker_bundle",
+    "type": "app",
+    "buildInfo": {
+      "buildVersion": "1.0.0",
+      "buildName": "@vezolabs/pimcore-login-tracker-bundle"
+    },
+    "remoteEntry": {
+      "name": "static/js/remoteEntry.js",
+      "path": "",
+      "type": "global"
+    },
+    "types": {
+      "path": "",
+      "name": "",
+      "zip": "",
+      "api": ""
+    },
+    "globalName": "pimcore_login_tracker_bundle",
+    "pluginVersion": "0.8.12",
+    "prefetchInterface": false,
+    "publicPath": "/bundles/pimcorelogintracker/build/pimcore-login-tracker/"
+  },
+  "shared": [
+    {
+      "id": "pimcore_login_tracker_bundle:antd",
+      "name": "antd",
+      "version": "5.29.3",
+      "singleton": true,
+      "requiredVersion": "^5.29.3",
+      "assets": {
+        "js": {
+          "async": [
+            "static/js/async/610.1c1898cb.js",
+            "static/js/async/481.9554b5b1.js"
+          ],
+          "sync": [
+            "static/js/async/194.00b358c0.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "pimcore_login_tracker_bundle:react-dom",
+      "name": "react-dom",
+      "version": "18.3.1",
+      "singleton": true,
+      "requiredVersion": "^18.3.1",
+      "assets": {
+        "js": {
+          "async": [
+            "static/js/async/610.1c1898cb.js"
+          ],
+          "sync": [
+            "static/js/async/481.9554b5b1.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "pimcore_login_tracker_bundle:react",
+      "name": "react",
+      "version": "18.3.1",
+      "singleton": true,
+      "requiredVersion": "^18.3.1",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "static/js/async/610.1c1898cb.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    }
+  ],
+  "remotes": [],
+  "exposes": [
+    {
+      "id": "pimcore_login_tracker_bundle:plugins",
+      "name": "plugins",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/lib-axios.7d0bf055.js",
+            "static/js/async/905.ac5a3cf1.js",
+            "static/js/async/987.ceebed8f.js",
+            "static/js/async/__federation_expose_plugins.876e4a62.js"
+          ],
+          "async": [
+            "static/js/async/610.1c1898cb.js",
+            "static/js/async/194.00b358c0.js",
+            "static/js/async/481.9554b5b1.js"
+          ]
+        },
+        "css": {
+          "sync": [],
+          "async": []
+        }
+      },
+      "path": "./plugins"
+    }
+  ]
+}
