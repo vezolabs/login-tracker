@@ -46,11 +46,11 @@ function doRegister(container: any) {
     ]);
 
     if (mainNavRegistry && typeof mainNavRegistry.registerMainNavItem === 'function') {
-      // Primary entry under System
+      // Primary: Parallel to System at top level
       mainNavRegistry.registerMainNavItem({
-        path: 'System/Vezo Labs : Login Tracker',
-        label: 'Vezo Labs : Login Tracker',
-        order: 1040,
+        path: 'Login Tracker',
+        label: 'Login Tracker',
+        order: 810,
         icon: 'security',
         permission: 'plugin_login_tracker_view',
         widgetConfig: {
@@ -68,11 +68,11 @@ function doRegister(container: any) {
         },
       });
 
-      // Entry under Settings
+      // Secondary: Under System menu
       mainNavRegistry.registerMainNavItem({
-        path: 'Settings/Vezo Labs : Login Tracker',
-        label: 'Vezo Labs : Login Tracker',
-        order: 1040,
+        path: 'System/Login Tracker',
+        label: 'Login Tracker',
+        order: 1060,
         icon: 'security',
         permission: 'plugin_login_tracker_view',
         widgetConfig: {
