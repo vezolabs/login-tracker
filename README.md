@@ -1,100 +1,103 @@
-# Pimcore 12 Login Tracker Plugin
+# VezoLabs Login Tracker for Pimcore 12 Studio
 
-A production-ready, secure, and intuitive **Login Tracker Plugin** designed specifically for **Pimcore 12 Studio**. It empowers administrators and security teams to monitor authentication events, analyze login trends, detect anomalous access patterns, and configure data privacy/retention policies—all from a native, non-technical interface inside Pimcore Studio.
+[![CI](https://github.com/vezolabs/login-tracker/actions/workflows/ci.yml/badge.svg)](https://github.com/vezolabs/login-tracker/actions/workflows/ci.yml)
+[![Software License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![PHP](https://img.shields.io/badge/php-%3E%3D%208.2-777bb4.svg)](https://php.net)
+[![Pimcore](https://img.shields.io/badge/pimcore-12%20Studio-6c2e91.svg)](https://pimcore.com)
+[![Packagist Version](https://img.shields.io/packagist/v/vezolabs/pimcore-login-tracker-bundle.svg)](https://packagist.org/packages/vezolabs/pimcore-login-tracker-bundle)
 
----
+**VezoLabs Login Tracker** is an enterprise-grade security and authentication monitoring extension built for **Pimcore 12 Studio**. It enables administrators to monitor, analyze, and audit all backend authentication attempts in real time through an intuitive, non-technical Studio interface.
 
-## 🌟 Key Features
-
-### 1. Overview Dashboard
-- **Summary Metric Cards**: Live metrics for Total Login Attempts, Successful Logins, Failed Attempts, Success Rate percentage, Unique Active Users, and Failures in the past 24 hours.
-- **Visual Activity Chart**: Responsive timeline visualization displaying successful logins vs failed attempts by day or hour.
-- **Date Range Selector**: Presets for Last 24 Hours, Last 7 Days, Last 30 Days, Last 90 Days, and custom ranges.
-- **Friendly Empty State**: Helpful guidance immediately after installation before events are captured.
-
-### 2. Login Activity Table
-- **Searchable, Sortable, Paginated Table**: Full audit trail of every authentication attempt.
-- **Contextual Fields**:
-  - Date & time formatted in the configured administrator timezone (with UTC tooltip).
-  - Username and display name (from Pimcore user directory).
-  - Outcome indicator (Green "Successful" / Red "Failed").
-  - Authentication method badge (Password, Studio Token, Single Sign-On SAML, API Client).
-  - Source IP address (subject to privacy mode and permission masking).
-  - Safe, human-understandable failure reasons (e.g. "Invalid username or password", "User account does not exist", "Account is locked or disabled").
-  - Client device, browser, and operating system tags.
-- **Multi-Field Filtering**: Filter simultaneously by date range, username, outcome status, authentication method, and IP address.
-- **Event Detail Inspector**: Modal dialog providing complete contextual audit details (route, firewall, user identifiers, device details).
-- **Credentials Protection**: Passwords, tokens, cookies, and secret headers are strictly filtered out and never stored.
-
-### 3. User Login History
-- **Targeted User Audits**: Select or search for any user account to review their complete authentication track record.
-- **User Profile Banner**: Shows active/disabled status, administrator privileges, full name, and email.
-- **Lifetime Aggregates**: Total attempts, successful logins, and failed attempts.
-- **Quick Comparison**: Side-by-side cards showing the latest successful login vs the most recent failed attempt.
-- **Chronological History**: Dedicated timeline table for the selected user.
-
-### 4. Security Insights (Analytical Indicators)
-- **Repeated Failed Attempts**: Flags accounts targeted by consecutive failed attempts within a configurable time window (potential brute-force or credential guessing).
-- **Failures Followed by Success**: Highlights situations where multiple failed attempts were directly followed by a successful login (credential stuffing success or forgotten password recovery).
-- **Suspicious Source IPs**: Detects IP addresses generating high failure volumes across multiple accounts (dictionary attacks / automated scanners).
-- **Activity Volume Bursts**: Detects unusually high authentication traffic spikes across the system.
-- **Explainable & Actionable**: Every insight details *why* it was flagged and provides *suggested administrator actions*.
-- **Direct Drill-down**: Clickable shortcuts to filter the main Activity Table directly for the flagged user or IP.
-- *Note: These are analytical monitoring indicators to assist administrators, not proof of malice. No accounts or IPs are blocked automatically without explicit configuration.*
-
-### 5. Settings & Privacy Configuration
-- **No Source Code Editing**: Everything is configurable directly through the Studio UI.
-- **Activity Scope**: Master toggle to enable/disable tracking, with independent toggles for successful logins and failed attempts.
-- **IP Address Privacy (GDPR Compliant)**:
-  - *Full IP*: Stores complete client IP (e.g. `192.168.1.50`).
-  - *Anonymized IP*: Masks the host portion (e.g. `192.168.1.***` for IPv4; `2001:db8:****:****` for IPv6).
-  - *Disabled*: No IP addresses are recorded or stored.
-- **Data Retention & Auto-Purge**: Configurable retention periods (30, 60, 90, 180, 365 days, or Keep Forever). Expired records are automatically removed via Pimcore maintenance.
-- **Manual Retention Tool**: "Purge Expired Records Now" button with confirmation dialog and live record counters.
-- **Display Timezone**: Select preferred timezone for UI display and CSV exports.
-- **Threshold Sensitivity**: Configure failure counts and time windows for security alert detection.
-
-### 6. CSV Export
-- **Export Filtered Activity**: Downloads login records matching the currently applied search and filters.
-- **CSV Formula Injection Protection**: Values starting with dangerous characters (`=`, `+`, `-`, `@`, `\t`, `\r`, `%`) are automatically sanitized.
-- **Memory-Efficient Streaming**: Uses batched database cursors and chunked streaming to handle large datasets without memory exhaustion.
-- **Permission Enforcement**: Users lacking sensitive data viewing privileges have IP addresses masked in exports.
+Technical administrators install the package once via Composer. From that point forward, all routine operations, dashboard analytics, audit inquiries, security alerts, and privacy configurations are handled directly through the **Pimcore Studio UI** (accessible via **System → Login Tracker**).
 
 ---
 
-## 📋 Prerequisites
+## Screenshots & Interface
 
-- **PHP**: `8.2` or higher (fully tested on PHP `8.5`)
-- **Pimcore**: `2025.x` or `2026.x` (Pimcore 12)
-- **Symfony**: `6.4`, `7.x`, or `8.x`
-- **Pimcore Studio**: `pimcore/studio-ui-bundle` and `pimcore/studio-backend-bundle`
-- **Database**: MariaDB `10.11+` or MySQL `8.0+`
+<!-- Visual placeholders: Drop screenshots into docs/images/ -->
+
+| Overview Dashboard | Login Activity Table |
+| :---: | :---: |
+| ![Overview Dashboard](docs/images/overview-dashboard.png) | ![Login Activity Table](docs/images/activity-table.png) |
+
+| Security Insights | Settings & Retention |
+| :---: | :---: |
+| ![Security Insights](docs/images/security-insights.png) | ![Settings Page](docs/images/settings-page.png) |
 
 ---
 
-## 🚀 Installation
+## Video Walkthrough
 
-### Step 1: Install via Composer
+<!-- Video walkthrough placeholder -->
 
-Add the bundle to your Pimcore installation:
+> A video walkthrough covering installation, configuration, and practical usage will be linked here.
+> 
+> [![Video Walkthrough](https://img.shields.io/badge/YouTube-Video%20Guide%20(Coming%20Soon)-red?logo=youtube)](https://vezolabs.com)
+
+---
+
+## Key Features
+
+- **Real-Time Authentication Monitoring**: Tracks both successful logins and failed attempts across Pimcore Studio authentication firewalls with non-blocking server-side event capture.
+- **Intuitive Studio UI**: Built with React 18, TypeScript, and Module Federation. Natively integrated into Pimcore 12 Studio navigation with zero legacy ExtJS dependencies.
+- **Security Insights & Anomaly Detection**: Transparent behavioral rules highlight repeated failed logins, credential stuffing patterns (repeated failures followed by a success), and high-risk client IP clusters.
+- **Per-User Login History**: Quick-inspection modal showing last successful login, recent failed attempts, and complete chronological history for any selected user account.
+- **Privacy & Compliance**: Configurable IP recording with optional subnet anonymization (masking the last octet of IPv4 and interface ID of IPv6) and role-based sensitive masking.
+- **Zero Credential Exposure**: Passwords, 2FA tokens, session identifiers, and secret headers are strictly excluded from audit logs and failure reasons.
+- **Streaming CSV Export**: Filter-aware, memory-efficient streaming CSV export equipped with spreadsheet formula injection protection (`=`, `+`, `-`, `@`, `\t`, `\r`, `%`).
+- **Automated Data Retention**: Automatic log pruning via Pimcore's scheduled maintenance task (`Pimcore\Maintenance\TaskInterface`) and Symfony console command (`login-tracker:cleanup`).
+- **Granular Permissions**: Role-based access control protecting dashboard viewing, sensitive data inspection, CSV exports, and settings management.
+
+---
+
+## System Requirements & Compatibility
+
+| Requirement | Supported Version |
+|---|---|
+| **Pimcore** | Pimcore 12 with Studio UI (`^2025.0` or `^2026.0`) |
+| **PHP** | `^8.2`, `^8.3`, `^8.4`, `^8.5` |
+| **Symfony** | `^6.4`, `^7.0`, `^8.0` |
+| **Database** | MariaDB 10.6+ or MySQL 8.0+ |
+
+---
+
+## Legacy Pimcore Support & Customization
+
+Need this functionality for an earlier Pimcore version, or require custom integrations?
+
+- **Pimcore 6, Pimcore 10, or Pimcore 11**: Dedicated builds and backports tailored for classic Pimcore architectures.
+- **Custom Enterprise Integrations**: Bespoke SIEM / Syslog forwarding, Webhook notifications, IP blocklist automation, and SAML/SSO audit consolidation.
+
+👉 **[Contact VezoLabs for Customization & Legacy Support](https://vezolabs.com/contact)**
+
+---
+
+## Installation
+
+### Quick One-Line Install
+
+Run the following command in your Pimcore project root:
+
+```bash
+composer require vezolabs/pimcore-login-tracker-bundle && \
+bin/console pimcore:bundle:install PimcoreLoginTrackerBundle && \
+bin/console assets:install public && \
+bin/console cache:clear
+```
+
+---
+
+### Step-by-Step Installation
+
+#### 1. Require Package via Composer
 
 ```bash
 composer require vezolabs/pimcore-login-tracker-bundle
 ```
 
-*For local path development in a monorepo:*
-```json
-"repositories": [
-  {
-    "type": "path",
-    "url": "./login-tracker"
-  }
-]
-```
+#### 2. Enable Bundle
 
-### Step 2: Enable the Bundle
-
-If not auto-registered, add the bundle to `config/bundles.php`:
+If not auto-registered by Symfony Flex, add the bundle to `config/bundles.php`:
 
 ```php
 return [
@@ -103,133 +106,87 @@ return [
 ];
 ```
 
-### Step 3: Install Bundle Schema and Assets
-
-Run the Pimcore bundle installer:
+#### 3. Run Bundle Installer & Migrations
 
 ```bash
-# Inside docker or your environment:
 bin/console pimcore:bundle:install PimcoreLoginTrackerBundle
-bin/console assets:install --symlink --relative
+```
+
+#### 4. Publish Frontend Assets & Clear Cache
+
+```bash
+bin/console assets:install public
 bin/console cache:clear
 ```
 
-This creates the database tables (`plugin_login_tracker_records`, `plugin_login_tracker_settings`), registers the permission definitions in Pimcore, and seeds the default configuration.
+#### 5. Verify Installation
+
+```bash
+bin/console pimcore:bundle:list
+bin/console login-tracker:cleanup --dry-run
+```
 
 ---
 
-## 🔒 Permissions & Access Control
+## Quick Start Guide
 
-The plugin registers 4 granular permissions in `users_permission_definitions`:
-
-| Permission Key | Description | Default Access |
-|---|---|---|
-| `plugin_login_tracker_view` | View the Login Tracker navigation entry, overview dashboard, records table, user history, and insights | Administrators & Authorized Roles |
-| `plugin_login_tracker_view_sensitive` | View unmasked client IP addresses, raw user-agent headers, and low-level request details | Security Administrators |
-| `plugin_login_tracker_export` | Export filtered login records to CSV | Compliance / Audit Roles |
-| `plugin_login_tracker_settings` | Edit tracking preferences, privacy modes, alert thresholds, and execute manual retention purge | Super Administrators |
-
-Permissions are strictly enforced on backend REST API endpoints, not just hidden in the frontend UI. Unauthenticated or unauthorized requests receive HTTP 401/403 responses.
-
-To grant permissions to a Pimcore user or role:
-1. Navigate to **System > User & Roles** in Pimcore Studio.
-2. Open the user or role editor and select the **Permissions** tab.
-3. Check the desired `plugin_login_tracker_*` permissions and save.
+1. Log into Pimcore Studio (`/pimcore-studio/`) with administrator credentials.
+2. In the left navigation dock, click **System** → **Login Tracker**.
+3. The **Overview Dashboard** provides immediate visibility into recent login attempts, failure counts, and active unique users.
+4. Open the **Activity** tab to filter audit logs by date range, username, login outcome, authentication provider, or IP address.
+5. Review the **Security Insights** tab for automated anomaly indicators and unusual activity alerts.
+6. Configure retention schedules and privacy thresholds under **Settings**.
 
 ---
 
-## ⏰ Automated Retention Cleanup
+## CLI Commands
 
-Expired records are purged according to the configured retention period (default: 90 days). Cleanup can be triggered in two supported ways:
+### Retention Cleanup
 
-### 1. Pimcore Maintenance (Recommended)
-The bundle registers a `CleanupMaintenanceTask` tagged with `pimcore.maintenance.task`. It runs automatically during your regular Pimcore maintenance cron:
-
-```bash
-bin/console pimcore:maintenance
-```
-
-To run only the login tracker cleanup job:
-```bash
-bin/console pimcore:maintenance --job=login_tracker_cleanup
-```
-
-### 2. Standalone Symfony Console Command
-You can run or schedule the dedicated cleanup command:
+Purge login history older than the configured retention threshold (default: 90 days):
 
 ```bash
-# Uses configured retention days:
+# Preview records eligible for deletion without deleting
+bin/console login-tracker:cleanup --dry-run
+
+# Execute immediate purge
 bin/console login-tracker:cleanup
-
-# Override retention days:
-bin/console login-tracker:cleanup --days=30
 ```
 
 ---
 
-## 🛠️ Configuration Reference
+## Documentation
 
-All settings can be configured via **System > Login Tracker > Settings**:
+Detailed documentation is available in the [`docs/`](docs/) directory:
 
-| Setting | Type | Default | Description |
-|---|---|---|---|
-| `tracking_enabled` | bool | `true` | Master switch to enable or pause all login tracking |
-| `track_successful` | bool | `true` | Whether to record successful authentication events |
-| `track_failed` | bool | `true` | Whether to record failed login attempts |
-| `ip_tracking_mode` | string | `full` | `full` (complete IP), `anonymized` (last octet zeroed), or `disabled` |
-| `record_user_agent` | bool | `true` | Whether to capture browser, OS, and device information |
-| `retention_days` | int | `90` | Days to keep records before automatic deletion (0 = keep forever) |
-| `default_date_range` | string | `7_days` | Default overview date range (`24_hours`, `7_days`, `30_days`, `90_days`) |
-| `display_timezone` | string | `UTC` | Timezone used to format timestamps in UI and CSV export |
-| `alert_failed_threshold` | int | `5` | Number of failures per account before generating a security alert |
-| `alert_window_minutes` | int | `15` | Time window in minutes for counting consecutive failures |
-| `alert_ip_threshold` | int | `10` | Number of failures per IP address before generating an alert |
-| `alert_multi_failure_success` | bool | `true` | Flag accounts with multiple failures followed by a successful login |
+- [Installation & Activation](docs/installation.md)
+- [Configuration Reference](docs/configuration.md)
+- [Security Architecture & Hardening](docs/security.md)
+- [Troubleshooting & Diagnostics](docs/troubleshooting.md)
 
 ---
 
-## 🧪 Testing
+## Contributing
 
-The bundle includes automated tests covering event capture, deduplication, privacy masking, repository filtering, formula injection defense, permissions, retention, and live database persistence:
+Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) for coding standards and test execution.
+
+To run the automated PHPUnit test suite:
 
 ```bash
-# Inside docker container or PHP environment:
-vendor/bin/phpunit -c login-tracker/phpunit.xml.dist
+vendor/bin/phpunit -c phpunit.xml.dist
 ```
 
-### Test Coverage Highlights:
-- `LoginEventSubscriberTest`: Successful & failed event capture, deduplication attribute check, user resolution, non-blocking resilience when DB connection fails.
-- `CsvExportServiceTest`: Neutralization of CSV formula injection prefixes (`=`, `+`, `-`, `@`, `\t`, `\r`, `%`), streaming generator.
-- `SettingsServiceTest`: Validation, fallback defaults, and cache invalidation.
-- `SecurityInsightsServiceTest`: Algorithmic rule detection for repeated failures, credential stuffing, and IP flooding.
-- `RetentionServiceTest`: Retention calculation and purge execution.
-- `AuthorizationAndApiTest`: 401/403 access control enforcement for unauthenticated and unauthorized users across all API endpoints.
-- `LoginTrackerIntegrationTest`: End-to-end database queries, sorting, pagination, and cleanup against live MariaDB/MySQL.
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-## 🗑️ Uninstallation
+## Commercial Support & Consulting
 
-To cleanly uninstall the plugin:
+VezoLabs provides professional consulting, enterprise deployment, and custom Pimcore development.
 
-```bash
-bin/console pimcore:bundle:uninstall PimcoreLoginTrackerBundle
-bin/console cache:clear
-```
-
-This will safely drop the bundle database tables (`plugin_login_tracker_records`, `plugin_login_tracker_settings`) and clean up permission definitions.
-
----
-
-## ℹ️ Technical Notes & Limitations
-
-- **Authentication Lifecycle**: Uses Symfony Security 7 events (`LoginSuccessEvent` and `LoginFailureEvent`) on the `pimcore_studio` firewall. Subsequent page requests using existing sessions do not create duplicate events.
-- **Fail-Safe Operation**: Event capture is wrapped in try-catch blocks. If database persistence encounters an error, the failure is logged, and the user's login is **never** blocked.
-- **SSO / External Authenticators**: When SAML / Microsoft Entra ID / SSO plugins are active, successful and failed logins through those authenticators are captured with the `sso` authentication method.
-- **API Token Logins**: Studio Admin token logins (`pimcore_studio_api_token_login`) are classified under the `token` method.
-
----
-
-## 📄 License
-
-GPL-3.0-or-later. Built for the Pimcore Community.
+- Website: [https://vezolabs.com](https://vezolabs.com)
+- Inquiries: [https://vezolabs.com/contact](https://vezolabs.com/contact)
