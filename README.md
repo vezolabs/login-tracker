@@ -18,11 +18,10 @@ Technical administrators install the package once via Composer. From that point 
 
 | Overview Dashboard | Login Activity Table |
 | :---: | :---: |
-| ![Overview Dashboard](docs/images/overview-dashboard.png) | ![Login Activity Table](docs/images/activity-table.png) |
-
-| Security Insights | Settings & Retention |
+| ![Overview Dashboard](docs/images/screen-1.png) | ![Login Activity Table](docs/images/screen-2.png) |
+| Security Insights & Anomaly Detection | Settings & Privacy Configuration |
 | :---: | :---: |
-| ![Security Insights](docs/images/security-insights.png) | ![Settings Page](docs/images/settings-page.png) |
+| ![Security Insights](docs/images/screen-3.png) | ![Settings Page](docs/images/screen-4.png) |
 
 ---
 
