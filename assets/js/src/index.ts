@@ -46,11 +46,12 @@ function doRegister(container: any) {
     ]);
 
     if (mainNavRegistry && typeof mainNavRegistry.registerMainNavItem === 'function') {
-      // Primary entry under System (shield menu in Studio sidebar)
+      // Primary entry under System
       mainNavRegistry.registerMainNavItem({
         path: 'System/Login Tracker',
         label: 'Login Tracker',
-        order: 1060,
+        order: 1040,
+        icon: 'security',
         permission: 'plugin_login_tracker_view',
         widgetConfig: {
           name: 'login-tracker',
@@ -61,17 +62,18 @@ function doRegister(container: any) {
             translationKey: 'Login Tracker',
             icon: {
               type: 'name',
-              value: 'safety-certificate',
+              value: 'security',
             },
           },
         },
       });
 
-      // Secondary entry under Settings if present
+      // Entry under Settings
       mainNavRegistry.registerMainNavItem({
         path: 'Settings/Login Tracker',
         label: 'Login Tracker',
-        order: 1060,
+        order: 1040,
+        icon: 'security',
         permission: 'plugin_login_tracker_view',
         widgetConfig: {
           name: 'login-tracker',
@@ -82,7 +84,7 @@ function doRegister(container: any) {
             translationKey: 'Login Tracker',
             icon: {
               type: 'name',
-              value: 'safety-certificate',
+              value: 'security',
             },
           },
         },

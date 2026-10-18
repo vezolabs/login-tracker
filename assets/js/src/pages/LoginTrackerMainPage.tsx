@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Tabs, Typography, Space, Badge } from 'antd';
+import { Tabs, Typography, Space, ConfigProvider } from 'antd';
 import {
   DashboardOutlined,
   TableOutlined,
@@ -15,6 +15,14 @@ import { SecurityInsights } from '../components/SecurityInsights';
 import { SettingsPage } from '../components/SettingsPage';
 
 const { Title, Text } = Typography;
+
+const PIMCORE_THEME = {
+  token: {
+    colorPrimary: '#722ed1',
+    borderRadius: 6,
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+  },
+};
 
 export const LoginTrackerMainPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('overview');
@@ -109,44 +117,57 @@ export const LoginTrackerMainPage: React.FC = () => {
   ];
 
   return (
-    <div style={{ padding: 24, background: '#fff', minHeight: '100vh' }}>
-      {/* Page Header */}
-      <div style={{ marginBottom: 20 }}>
-        <Space align="center" size={12}>
-          <div
-            style={{
-              width: 40,
-              height: 40,
-              borderRadius: 8,
-              background: '#e6f7ff',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#1890ff',
-              fontSize: 22,
-            }}
-          >
-            <SafetyOutlined />
-          </div>
-          <div>
-            <Title level={3} style={{ margin: 0 }}>
-              Login Tracker
-            </Title>
-            <Text type="secondary">
-              Real-time authentication monitoring, security audit trails, and login analytics for Pimcore Studio
-            </Text>
-          </div>
-        </Space>
-      </div>
+    <ConfigProvider theme={PIMCORE_THEME}>
+      <div
+        style={{
+          height: '100%',
+          width: '100%',
+          overflowY: 'auto',
+          background: '#f8fafc',
+          padding: '24px',
+          boxSizing: 'border-box',
+        }}
+      >
+        {/* Page Header */}
+        <div style={{ marginBottom: 20 }}>
+          <Space align="center" size={14}>
+            <div
+              style={{
+                width: 44,
+                height: 44,
+                borderRadius: 10,
+                background: '#f3e8ff',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#722ed1',
+                fontSize: 24,
+                boxShadow: '0 2px 6px rgba(114, 46, 209, 0.15)',
+              }}
+            >
+              <SafetyOutlined />
+            </div>
+            <div>
+              <Title level={3} style={{ margin: 0, color: '#1e293b' }}>
+                Login Tracker
+              </Title>
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                Real-time authentication monitoring, security audit trails, and login analytics for Pimcore Studio
+              </Text>
+            </div>
+          </Space>
+        </div>
 
-      {/* Main Tabs */}
-      <Tabs
-        activeKey={activeTab}
-        onChange={setActiveTab}
-        items={items}
-        size="large"
-        destroyInactiveTabPane={false}
-      />
-    </div>
+        {/* Main Tabs */}
+        <Tabs
+          activeKey={activeTab}
+          onChange={setActiveTab}
+          items={items}
+          size="middle"
+          destroyInactiveTabPane={false}
+          style={{ background: 'transparent' }}
+        />
+      </div>
+    </ConfigProvider>
   );
 };

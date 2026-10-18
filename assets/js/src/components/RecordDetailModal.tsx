@@ -67,7 +67,7 @@ export const RecordDetailModal: React.FC<RecordDetailModalProps> = ({
             <Space>
               <Text strong>{record.username}</Text>
               {onFilterUser && (
-                <Button orientation="right" type="link" size="small" onClick={() => onFilterUser(record.username)}>
+                <Button type="link" size="small" onClick={() => onFilterUser(record.username)}>
                   Filter by user
                 </Button>
               )}

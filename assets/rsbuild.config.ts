@@ -62,6 +62,7 @@ export default defineConfig({
       filename: 'static/js/remoteEntry.js',
       dts: false,
       exposes: {
+        '.': './js/src/plugins.ts',
         './plugins': './js/src/plugins.ts',
       },
       shared: {

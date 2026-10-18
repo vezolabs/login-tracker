@@ -3,7 +3,7 @@
     "/bundles/pimcorelogintracker/build/pimcore-login-tracker/static/js/main.c3b263a4.js",
     "/bundles/pimcorelogintracker/build/pimcore-login-tracker/static/js/remoteEntry.js",
     "/bundles/pimcorelogintracker/build/pimcore-login-tracker/static/js/async/610.1c1898cb.js",
-    "/bundles/pimcorelogintracker/build/pimcore-login-tracker/static/js/async/__federation_expose_plugins.08a91b83.js",
+    "/bundles/pimcorelogintracker/build/pimcore-login-tracker/static/js/async/__federation_expose_plugins.e5247cdb.js",
     "/bundles/pimcorelogintracker/build/pimcore-login-tracker/static/js/async/lib-axios.7d0bf055.js",
     "/bundles/pimcorelogintracker/build/pimcore-login-tracker/static/js/async/905.ac5a3cf1.js",
     "/bundles/pimcorelogintracker/build/pimcore-login-tracker/static/js/async/194.00b358c0.js",
@@ -47,7 +47,7 @@
           "/bundles/pimcorelogintracker/build/pimcore-login-tracker/static/js/async/194.00b358c0.js",
           "/bundles/pimcorelogintracker/build/pimcore-login-tracker/static/js/async/905.ac5a3cf1.js",
           "/bundles/pimcorelogintracker/build/pimcore-login-tracker/static/js/async/lib-axios.7d0bf055.js",
-          "/bundles/pimcorelogintracker/build/pimcore-login-tracker/static/js/async/__federation_expose_plugins.08a91b83.js",
+          "/bundles/pimcorelogintracker/build/pimcore-login-tracker/static/js/async/__federation_expose_plugins.e5247cdb.js",
           "/bundles/pimcorelogintracker/build/pimcore-login-tracker/static/js/async/610.1c1898cb.js"
         ]
       }

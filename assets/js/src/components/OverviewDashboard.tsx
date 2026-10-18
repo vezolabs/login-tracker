@@ -12,6 +12,7 @@ import {
   Tag,
   Space,
   Button,
+  Badge,
 } from 'antd';
 import {
   CheckCircleOutlined,
@@ -86,7 +87,7 @@ export const OverviewDashboard: React.FC<OverviewDashboardProps> = ({
           <div>
             <Text strong style={{ fontSize: 16 }}>Authentication Overview</Text>
             <div>
-              <Text orientation="left" type="secondary" style={{ fontSize: 12 }}>
+              <Text type="secondary" style={{ fontSize: 12 }}>
                 Display timezone: <Tag color="blue">{timezone}</Tag>
                 {!trackingEnabled && (
                   <Tag color="warning" icon={<WarningOutlined />}>Tracking Currently Disabled</Tag>
@@ -213,8 +214,8 @@ export const OverviewDashboard: React.FC<OverviewDashboardProps> = ({
                 <Text strong style={{ display: 'block', marginBottom: 4 }}>Most Recent</Text>
                 {metrics?.most_recent ? (
                   <div>
-                    <Space orientation="vertical" size={2}>
-                      <Space orientation="horizontal" size={4}>
+                    <Space direction="vertical" size={2}>
+                      <Space size={4}>
                         <Tag color={metrics.most_recent.status === 'success' ? 'success' : 'error'}>
                           {metrics.most_recent.status === 'success' ? 'Success' : 'Failed'}
                         </Tag>
