@@ -25,6 +25,7 @@ if (window.alternativePluginExportPaths === undefined) {
   window.alternativePluginExportPaths = {};
 }
 window.pluginRemotes.pimcore_login_tracker_bundle = "${remoteEntryUrl}";
+window.alternativePluginExportPaths.pimcore_login_tracker_bundle = "/plugins";
 `;
       fs.writeFileSync(path.resolve(buildPath, 'exposeRemote.js'), exposeRemoteJs.trim());
 
